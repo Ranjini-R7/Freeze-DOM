@@ -1,0 +1,17 @@
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("let freezeOverlay = document.createElement('div');"
+               + "freezeOverlay.style.position = 'fixed';"
+               + "freezeOverlay.style.top = '0';"
+               + "freezeOverlay.style.left = '0';"
+               + "freezeOverlay.style.width = '100%';"
+               + "freezeOverlay.style.height = '100%';"
+               + "freezeOverlay.style.backgroundColor = 'rgba(255,255,255,0.7)';"
+               + "freezeOverlay.style.zIndex = '9999';"
+               + "freezeOverlay.id = 'freezeOverlay';"
+               + "document.body.appendChild(freezeOverlay);");
+
+
+js.executeScript("let freezeOverlay = document.getElementById('freezeOverlay');"
+               + "if (freezeOverlay) {"
+               + "freezeOverlay.remove();"
+               + "}");
